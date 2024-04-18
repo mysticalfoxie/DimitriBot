@@ -21,7 +21,7 @@ export class Schedule {
     }
 
     public start(): void {
-        this._schedule = cron.schedule(`${this.hour} ${this.minute} * * *`, async () => await this.callback());
+        this._schedule = cron.schedule(`${this.minute} ${this.hour} * * *`, async () => await this.callback());
         this._schedule.start();
         this._interval = setInterval(() => this.logTimespan(), 5 * 60 * 1000);
         console.log('⏰ Schedule started!');
