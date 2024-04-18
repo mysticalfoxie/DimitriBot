@@ -1,4 +1,4 @@
-﻿./node_modules
-./token.json
-./dimitri-bot.bat
-./idea
+﻿node_modules
+token.json
+dimitri-bot.bat
+.idea
