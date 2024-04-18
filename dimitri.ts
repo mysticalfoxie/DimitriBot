@@ -15,6 +15,7 @@ export class Program {
     public async main(): Promise<void> {
         this.schedule.setCallback(async () => {
             await this.discord.kickUsersFromVoice();
+            console.log(`✅ Action executed!`)
         });
         
         this.schedule.setTime(1);
