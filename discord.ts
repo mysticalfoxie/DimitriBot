@@ -25,15 +25,13 @@ export class Discord {
 
     public async kickUsersFromVoice(): Promise<void> {
         return new Promise(resolve => {
-            let count = this._channel.members.size;
             this._channel.members.forEach(async x => {
                 await x.voice.disconnect("Sleeping time 💤");
                 await this.sendMessage(`Disconnected <@${x.id}> from voice.`);
                 console.log(`Kicked ${x.user.username} from voice.`);
-                count--;
-
-                if (count == 0) resolve();
             });
+            
+            resolve();
         });
     }
 
